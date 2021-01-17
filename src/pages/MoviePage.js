@@ -4,7 +4,6 @@ import Movies from "../components/Movies";
 import "../styles/moviePage.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { FaExpeditedssl } from "react-icons/fa";
 
 function MoviePage(props) {
   const [search, setSearch] = useState("");
@@ -21,7 +20,9 @@ function MoviePage(props) {
       }
     } else {
       toast.error(
-        "You can only select 5 movies to nominate. Please delete a movie before nominating another.",
+        `You can only select 5 movies to nominate.${(
+          <br />
+        )}\nPlease delete a movie before nominating another.`,
         { position: toast.POSITION.TOP_CENTER }
       );
     }
