@@ -20,9 +20,7 @@ function MoviePage(props) {
       }
     } else {
       toast.error(
-        `You can only select 5 movies to nominate.${(
-          <br />
-        )}\nPlease delete a movie before nominating another.`,
+        `You can only select 5 movies to nominate. Please delete a movie before nominating another.`,
         { position: toast.POSITION.TOP_CENTER }
       );
     }
@@ -35,14 +33,16 @@ function MoviePage(props) {
   };
 
   const onChangeHandler = (input) => {
-    console.log("onchange", input);
     setSearch(input);
   };
 
   return (
     <div className="container">
       <div className="searchBarComp">
-        <SearchBar onChangeHandler={(input) => onChangeHandler(input)} />
+        <SearchBar
+          onChangeHandler={(input) => onChangeHandler(input)}
+          searchValue={search}
+        />
         <div className="resultsContainer">
           <Movies
             search={search}

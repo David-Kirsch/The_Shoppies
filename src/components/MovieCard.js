@@ -1,5 +1,6 @@
 import React from "react";
 import "../styles/movieCard.css";
+import noPoster from "../assets/noPoster.png";
 
 function MovieCard(props) {
   const clickHandler = (movie) => {
@@ -14,12 +15,21 @@ function MovieCard(props) {
   if (props.nominated) {
     classname = "nominatedCard";
   }
+  console.log(props.data);
   return (
     <div className={classname}>
       <div className="title">
         {props.data.Title} ({props.data.Year})
       </div>
-      <img src={props.data.Poster} alt={props.data.Title} />
+      {props.data.Poster !== "N/A" ? (
+        <img src={props.data.Poster} alt={props.data.Title} />
+      ) : (
+        <img
+          src={noPoster}
+          style={{ height: 350, width: 300 }}
+          alt="No Poster"
+        />
+      )}
       <div>
         {!props.nominated ? (
           <button onClick={() => clickHandler(props.data)}>Nominate</button>

@@ -24,7 +24,11 @@ function Movies(props) {
   const renderMovies = () => {
     if (movies) {
       return movies.map((movie) => (
-        <MovieCard data={movie} clickHandler={() => clickHandler(movie)} />
+        <MovieCard
+          data={movie}
+          clickHandler={() => clickHandler(movie)}
+          key={movie.imdbID}
+        />
       ));
     }
   };
@@ -36,6 +40,7 @@ function Movies(props) {
           data={movie}
           nominated={true}
           deleteHandler={(movie) => deleteMovie(movie)}
+          key={movie.imdbID}
         />
       ));
     }

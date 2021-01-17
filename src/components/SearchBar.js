@@ -3,12 +3,8 @@ import "../styles/searchBar.css";
 import { FaSistrix } from "react-icons/fa";
 
 function SearchBar(props) {
-  let [input, setInput] = useState("");
-
   const searchHandler = (e) => {
-    console.log("source ", e.target.value);
-    setInput(e.target.value);
-    props.onChangeHandler(input);
+    props.onChangeHandler(e.target.value);
   };
 
   return (
@@ -18,7 +14,7 @@ function SearchBar(props) {
         <FaSistrix />
         <input
           placeholder="Enter Movie Name..."
-          value={input}
+          value={props.search}
           onChange={(e) => searchHandler(e)}
         ></input>
       </div>
