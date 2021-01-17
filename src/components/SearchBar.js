@@ -6,6 +6,7 @@ function SearchBar(props) {
   let [input, setInput] = useState("");
 
   const searchHandler = (e) => {
+    console.log("source ", e.target.value);
     setInput(e.target.value);
     props.onChangeHandler(input);
   };

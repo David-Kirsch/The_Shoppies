@@ -21,7 +21,14 @@ function MoviePage(props) {
     }
   };
 
+  const deleteNomination = (movie) => {
+    setNominated(
+      nominated.filter((nominate) => nominate.imdbID !== movie.imdbID)
+    );
+  };
+
   const onChangeHandler = (input) => {
+    console.log("onchange", input);
     setSearch(input);
   };
 
@@ -34,6 +41,7 @@ function MoviePage(props) {
             search={search}
             nominated={nominated}
             clickHandler={(movie) => clickHandler(movie)}
+            deleteNomination={(movie) => deleteNomination(movie)}
           />
           <ToastContainer />
         </div>

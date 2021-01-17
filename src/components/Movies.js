@@ -17,6 +17,10 @@ function Movies(props) {
     props.clickHandler(movie);
   };
 
+  const deleteMovie = (movie) => {
+    props.deleteNomination(movie);
+  };
+
   const renderMovies = () => {
     if (movies) {
       return movies.map((movie) => (
@@ -28,12 +32,15 @@ function Movies(props) {
   const renderNominated = () => {
     if (props.nominated) {
       return props.nominated.map((movie) => (
-        <MovieCard data={movie} nominated={true} />
+        <MovieCard
+          data={movie}
+          nominated={true}
+          deleteHandler={(movie) => deleteMovie(movie)}
+        />
       ));
     }
   };
 
-  console.log("added to array", props.nominated);
   return (
     <div className="wrapper">
       <div className="results column">{renderMovies()}</div>
