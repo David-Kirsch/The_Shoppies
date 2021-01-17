@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import SearchBar from "../components/SearchBar";
 import Movies from "../components/Movies";
 import "../styles/moviePage.css";
-import background from "../assets/movietheater.png";
-import { ToastContainer, Toast, toast } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { FaExpeditedssl } from "react-icons/fa";
 
 function MoviePage(props) {
   const [search, setSearch] = useState("");
@@ -12,7 +12,13 @@ function MoviePage(props) {
 
   const clickHandler = (movie) => {
     if (nominated.length !== 5) {
-      setNominated([movie].concat(nominated));
+      if (nominated.includes(movie)) {
+        toast.error("You already nominated that movie", {
+          position: toast.POSITION.TOP_CENTER,
+        });
+      } else {
+        setNominated([movie].concat(nominated));
+      }
     } else {
       toast.error(
         "You can only select 5 movies to nominate. Please delete a movie before nominating another.",
