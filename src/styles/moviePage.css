@@ -1,0 +1,12 @@
+.container {
+  background-color: gray;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.searchBarComp {
+  position: relative;
+  left: 25%;
+  top: 10%;
+  width: 50%;
+}
