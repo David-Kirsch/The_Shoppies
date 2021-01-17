@@ -1,12 +1,19 @@
 .container {
-  background-color: gray;
+  /* background-color: gray; */
+  background: url(../assets/movietheater.png) no-repeat top center fixed;
+  background-size: cover;
   position: absolute;
   width: 100%;
-  height: 100%;
+  height: 100vh;
+}
+.resultsContainer {
+  background-color: white;
+  margin-top: 20px;
+  margin-left: -100px;
 }
 .searchBarComp {
   position: relative;
   left: 25%;
-  top: 10%;
+  top: 5%;
   width: 50%;
 }

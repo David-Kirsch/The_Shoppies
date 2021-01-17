@@ -1,0 +1,39 @@
+.wrapper {
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  background-color: white;
+}
+
+.column {
+  height: 80vh;
+
+  overflow: scroll;
+}
+
+.column:nth-child(3) {
+  text-align: center;
+}
+
+.nominatedList {
+  font-size: 25px;
+  font-weight: 500;
+}
+
+.nominatedList span {
+  background-color: gold;
+  padding: 5px;
+  box-shadow: -3px 2px 9px 2px rgb(92, 89, 81);
+}
+
+.middle {
+  font-size: 125px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  font-family: "Cookie", cursive;
+  color: rgb(170, 15, 15);
+  text-shadow: 2px 0px black;
+}
