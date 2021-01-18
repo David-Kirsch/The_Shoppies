@@ -11,13 +11,14 @@
 
 .nominatedCard {
   border: black 1px solid;
-  margin: 10px;
+  margin: 40px;
   padding: 10px;
 }
 
 .nominatedCard img {
   position: relative;
-  width: 100px;
+  width: 100px !important;
+  height: 150px !important;
   justify-self: center;
 }
 

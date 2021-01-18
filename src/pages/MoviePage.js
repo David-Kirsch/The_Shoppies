@@ -17,6 +17,12 @@ function MoviePage(props) {
         });
       } else {
         setNominated([movie].concat(nominated));
+        if (nominated.length === 4) {
+          toast.success(
+            "Congratulations! You have completed your 5 nominees⭐️",
+            { position: toast.POSITION.TOP_CENTER }
+          );
+        }
       }
     } else {
       toast.error(
@@ -43,15 +49,15 @@ function MoviePage(props) {
           onChangeHandler={(input) => onChangeHandler(input)}
           searchValue={search}
         />
-        <div className="resultsContainer">
-          <Movies
-            search={search}
-            nominated={nominated}
-            clickHandler={(movie) => clickHandler(movie)}
-            deleteNomination={(movie) => deleteNomination(movie)}
-          />
-          <ToastContainer />
-        </div>
+      </div>
+      <div className="resultsContainer">
+        <Movies
+          search={search}
+          nominated={nominated}
+          clickHandler={(movie) => clickHandler(movie)}
+          deleteNomination={(movie) => deleteNomination(movie)}
+        />
+        <ToastContainer />
       </div>
     </div>
   );

@@ -15,7 +15,7 @@ function MovieCard(props) {
   if (props.nominated) {
     classname = "nominatedCard";
   }
-  console.log(props.data);
+
   return (
     <div className={classname}>
       <div className="title">
