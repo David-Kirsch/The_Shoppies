@@ -7,7 +7,7 @@ function Movies(props) {
 
   useEffect(() => {
     fetch(
-      `http://www.omdbapi.com?apikey=${process.env.REACT_APP_OMDB_API_KEY}&s=${props.search}`
+      `https://www.omdbapi.com?apikey=${process.env.REACT_APP_OMDB_API_KEY}&s=${props.search}`
     )
       .then((resp) => resp.json())
       .then((data) => setMovies(data["Search"]));
